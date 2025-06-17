@@ -1,0 +1,43 @@
+(defwidget widget-disk []
+  (label
+    :class "label-text"
+    :text " ${round(EWW_DISK["/"].used_perc, 0)}%"
+    :tooltip "Used: ${EWW_DISK['/'].used}GiB | Free: ${EWW_DISK['/'].free}GiB"
+  )
+)
+
+(defwidget widget-ram []
+  (label
+    :class "label-text"
+    :text " ${round(EWW_RAM.used_mem_perc, 0)}%"
+    :tooltip "Used: ${round(EWW_RAM.used_mem, 0)}GiB | Free: ${round(EWW_RAM.free_mem, 0)}GiB"
+  )
+)
+
+(defwidget widget-cpu []
+  (label
+    :class "label-text"
+    :tooltip "hi \n hello"
+    :text " ${round(EWW_CPU.avg, 0)}%"
+  )
+)
+
+(defwidget widget-temp []
+  (label
+    :class "label-text"
+    :text "󰏈 ${EWW_TEMPS['CORETEMP_PACKAGE_ID_0']}°"
+  )
+)
+	
+(defwidget left-section []
+  (box
+    :class "topbar-left-box"
+    :space-evenly false
+    :halign "start"
+    :spacing 10
+    (widget-disk)
+    (widget-ram)
+    (widget-cpu)
+    (widget-temp)
+  )
+)

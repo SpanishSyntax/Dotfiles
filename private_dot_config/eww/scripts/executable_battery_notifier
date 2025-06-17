@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Prevent repeated notifications
+ALERTED=0
+
+while true; do
+  BATTERY=$(cat /sys/class/power_supply/BAT0/capacity)
+  STATUS=$(cat /sys/class/power_supply/BAT0/status)
+
+  if [ "$BATTERY" -le 10 ] && [ "$STATUS" != "Charging" ]; then
+    if [ "$ALERTED" -eq 0 ]; then
+      notify-send "⚠️ Low Battery" "Battery is at ${BATTERY}%!"
+      ALERTED=1
+    fi
+  else
+    # Reset alert if battery rises or charging starts
+    ALERTED=0
+  fi
+
+  sleep 60  # Check every 60 seconds
+done

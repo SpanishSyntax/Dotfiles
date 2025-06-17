@@ -1,0 +1,6 @@
+(defwidget widget-clock []
+  (label
+    :class "label-text"
+    :text "${formattime(EWW_TIME, "%H:%M %p")}"
+  )
+)

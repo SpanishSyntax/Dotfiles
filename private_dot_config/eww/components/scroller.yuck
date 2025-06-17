@@ -1,0 +1,14 @@
+(defwidget widget-scroller [label orientation onchange value ?flipped ?action ?min ?right_click]
+  (box :space-evenly true
+    (scale
+      :class "widget-scroller"
+      :orientation orientation
+      :flipped flipped
+      :min {0 + min}
+      :max 101
+      :active {onchange != ""}
+      :value value
+      :onchange onchange
+    )
+  )
+)

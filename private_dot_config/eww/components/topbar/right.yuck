@@ -1,0 +1,93 @@
+(include "./components/clock.yuck")
+(include "./components/scroller.yuck")
+(include "./components/battery.yuck")
+
+(deflisten BRIGHTNESS "scripts/brightness")
+(deflisten VOLUME "scripts/volume")
+
+(defvar SHOW_HIDDEN_BRIGHTNESS false)
+(defvar SHOW_HIDDEN_VOLUME false)
+
+
+
+(defwidget widget-power []
+  (button
+    :class "circular-button"
+    :onclick "bash -c 'rofi -show p -modi p:rofi-power-menu &'"
+    (image :icon "power")
+  )
+)
+
+
+
+(defwidget right-section []
+  (box
+    :class "topbar-right-box"
+    :space-evenly false
+    :spacing 10
+    :halign "end"
+    (systray)
+    (widget-battery :battery "${EWW_BATTERY.BAT0.capacity}" :status "${EWW_BATTERY.BAT0.status}")
+
+
+
+;;    (circular-progress
+  ;;    :width 24
+    ;;  :height 24
+;;      :class "progreso-circular"
+  ;;    :value 30
+    ;;  :start-at 0
+;;      :thickness 4
+  ;;    :clockwise false
+    ;;)
+
+
+
+
+    (eventbox
+      :onhover "eww update SHOW_HIDDEN_BRIGHTNESS=true"
+      :onhoverlost "eww update SHOW_HIDDEN_BRIGHTNESS=false"
+      (box :space-evenly false
+        (label :class "brightness_icon" :text "󰃟 ")
+        (revealer :reveal SHOW_HIDDEN_BRIGHTNESS :transition "slideright" :duration "450ms" :valign "fill"
+          (widget-scroller
+            :orientation "h"
+            :flipped false
+            :label "󰃟 "
+            :value BRIGHTNESS
+            :onchange "scripts/brightness --set-bright {}"
+            :right_click ""       
+          )
+        )
+      )
+    )
+
+    (eventbox
+      :onhover "eww update SHOW_HIDDEN_VOLUME=true"
+      :onhoverlost "eww update SHOW_HIDDEN_VOLUME=false"
+      (box :space-evenly false
+        (label :class "volume_icon" :text "󰕾 ")
+        (revealer :reveal SHOW_HIDDEN_VOLUME :transition "slideright" :duration "450ms" :valign "fill"
+          (widget-scroller
+            :orientation "h"
+            :flipped false
+            :label "󰕾 "
+            :value VOLUME
+            :onchange "scripts/volume --set-volume {}"
+            :right_click ""
+          )
+        )
+      )
+    )
+
+
+
+    (button
+      :class "invisible-button"
+      :onclick "notify-send 'hi'"
+      (widget-clock)
+    )
+    (widget-power)
+  )
+)
+

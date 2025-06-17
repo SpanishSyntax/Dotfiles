@@ -1,0 +1,26 @@
+(include "./components/topbar/left.yuck")
+(include "./components/topbar/center.yuck")
+(include "./components/topbar/right.yuck")
+
+(defwindow topbar
+    :monitor 0
+    :geometry (
+      geometry 
+        :x "0%"
+        :y "0%"
+        :width "100%"
+        :anchor "top center")
+    :stacking "fg"
+    :exclusive true
+    :windowtype "dock"
+    :wm-ignore false
+    :class "topbar-window"
+
+    (box
+      :class "topbar-box"
+
+      (left-section)
+      (center-section)
+      (right-section)
+    )
+)

@@ -1,0 +1,144 @@
+$base: #1e1e2e;
+$mantle: #181825;
+$crust: #11111b;
+
+$text: #cdd6f4;
+$white-text: #ddd;
+$subtext0: #a6adc8;
+$subtext1: #bac2de;
+
+$surface0: rgba(22, 25, 37, 0.9);
+$surface1: #45475a;
+$surface2: #585b70;
+$surface3: #394161;
+
+$overlay0: #6c7086;
+$overlay1: #7f849c;
+$overlay2: #9ba3c3;
+
+$blue: #89b4fa;
+$lavender: #b4befe;
+$sapphire: #74c7ec;
+$sky: #89dceb;
+$teal: #94e2d5;
+$green: #a6e3a1;
+$yellow: #f9e2af;
+$peach: #fab387;
+$maroon: #eba0ac;
+$red: #f38ba8;
+$mauve: #cba6f7;
+$pink: #f5c2e7;
+$flamingo: #f2cdcd;
+$rosewater: #f5e0dc;
+
+$surface-darkgrey: #20252b;
+$surface-fg: #949494;
+$surface-lightgrey: #3d464e;
+$surface-grey: #2b3238;
+$surface-red: #f87070;
+
+* {
+  font-family: '0xProto Nerd Font';
+  font-size: 1rem;
+  font-weight: Bold;
+  
+  -webkit-font-smoothing: antialiased;
+}
+
+.topbar
+{
+  background-color: transparent;
+  padding: 3px;
+  padding-bottom: 0px;
+}
+
+.topbar-left-box,
+.topbar-center-box,
+.topbar-right-box
+{
+  background-color: $surface0;
+  border-radius: 50px;
+}
+
+.topbar-left-box
+{
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
+.topbar-right-box
+{
+  padding-left: 10px;
+}
+
+.label-text
+{
+  color: $white-text;
+  padding: 0px;
+  margin: 0px;
+}
+
+.invisible-button
+{
+  all: unset;
+}
+
+.circular-button
+{
+  all: unset;
+  background: white;
+  border-radius: 50%;
+  margin: 6px;
+  color: $surface0;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.widget-scroller trough {
+  background-color: $surface3;
+  min-width: 100px;
+  min-height: 10px;
+  border-radius: 20px;
+}
+.widget-scroller trough highlight {
+  background-color: white;
+  border-radius: 20px;
+}
+
+
+
+.progreso-circular
+{
+  background-color: red;
+}
+
+.brightness_icon,
+{
+  font-size: 1.3rem;
+  padding-left: 5px;
+}
+
+.bat-icon {
+  font-size: 1.3rem;
+}
+
+.volume_icon,
+{
+  font-size: 1.5rem;
+}
+
+.bat-icon.normal {
+  color: #a6e3a1; /* Soft green - healthy battery */
+}
+
+.bat-icon.warning {
+  color: #f9e2af; /* Soft amber - medium battery */
+}
+
+.bat-icon.danger {
+  color: #f38ba8; /* Soft red-pink - low battery */
+}
+
+.bat-icon.charging {
+  color: #89b4fa; /* Soft blue - charging */
+}

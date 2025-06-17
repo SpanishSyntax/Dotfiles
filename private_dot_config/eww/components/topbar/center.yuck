@@ -1,0 +1,21 @@
+(defpoll workspaces-json :interval "500ms" :json true "hyprctl workspaces -j | jq 'sort_by(.id) | map(select(.id != -98))'")
+
+(defwidget workspaces-module []
+  (box 
+    (for ws in workspaces-json
+      (button 
+        :class "circular-button"
+        :onclick "hyprctl dispatch workspace ${ws.id}"
+        "${ws.id}"
+      )
+    )
+  )
+)
+
+(defwidget center-section []
+  (box
+    :class "topbar-center-box"
+    :halign "center"
+    (workspaces-module)
+  )
+)

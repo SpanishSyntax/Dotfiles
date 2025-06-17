@@ -1,0 +1,108 @@
+$base: #1e1e2e;
+$mantle: #181825;
+$crust: #11111b;
+
+$text: #cdd6f4;
+$subtext0: #a6adc8;
+$subtext1: #bac2de;
+
+$surface0: rgba(22, 25, 37, 0.9);
+$surface1: #45475a;
+$surface2: #585b70;
+$surface3: #394161;
+
+$overlay0: #6c7086;
+$overlay1: #7f849c;
+$overlay2: #9ba3c3;
+
+$blue: #89b4fa;
+$lavender: #b4befe;
+$sapphire: #74c7ec;
+$sky: #89dceb;
+$teal: #94e2d5;
+$green: #a6e3a1;
+$yellow: #f9e2af;
+$peach: #fab387;
+$maroon: #eba0ac;
+$red: #f38ba8;
+$mauve: #cba6f7;
+$pink: #f5c2e7;
+$flamingo: #f2cdcd;
+$rosewater: #f5e0dc;
+
+$surface-darkgrey: #20252b;
+$surface-fg: #949494;
+$surface-lightgrey: #3d464e;
+$surface-grey: #2b3238;
+$surface-red: #f87070;
+
+* {
+  font-family: '0xProto Nerd Font';
+  font-size: 16px;
+  font-weight: Bold;
+  min-height: 0;
+  
+  -webkit-font-smoothing: antialiased;
+}
+
+.topbar {
+  padding: 3px;
+  padding-bottom: 0px;
+  background-color: transparent;
+}
+
+.topbar-left,
+.topbar-center,
+.topbar-right
+{
+  background-color: $surface0;
+  border-radius: 30px;
+}
+
+.topbar-left,
+{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.topbar-right
+{
+  padding-left: 10px;
+}
+
+.circular-button
+{
+  all: unset;
+  background: white;
+  border-radius: 50%;
+  margin: 5px;
+  color: $surface0;
+}
+
+
+
+
+.widget-scroller slider
+{
+  background-color: yellow;
+  border-radius: 50px;
+  min-height: 10px;
+  min-width: 10px;
+}
+
+.widget-scroller trough highlight 
+{
+  background-color: white;
+  border-radius: 50px;
+  min-height: 10px;
+  min-width: 100px;
+}
+
+
+.widget-scroller trough
+{
+  background-color: red;
+  border-radius: 50px;
+  min-height: 10px;
+  min-width: 100px;
+}
