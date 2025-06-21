@@ -122,3 +122,9 @@ load_venv_on_cd() {
 
 add-zsh-hook chpwd load_venv_on_cd
 load_venv_on_cd  # run once at shell start, too
+
+#mise
+eval "$(mise activate zsh)"
+
+#starship
+eval "$(starship init zsh)"
