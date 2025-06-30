@@ -18,5 +18,14 @@
     "after_delay": {
       "milliseconds": 1000
     }
+  },
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        }
+      }
+    }
   }
 }
