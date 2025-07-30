@@ -103,12 +103,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#fastfetch
-fastfetch
-
-#ssh-agent
-[ -f ~/.ssh/agent.env ] && source ~/.ssh/agent.env
-
 #auto_venv
 autoload -U add-zsh-hook
 load_venv_on_cd() {
@@ -122,3 +116,4 @@ eval "$(mise activate zsh)"
 
 #starship
 eval "$(starship init zsh)"
+
