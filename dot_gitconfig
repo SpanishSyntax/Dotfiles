@@ -1,0 +1,14 @@
+[user]
+	name = SpanishHans LT
+	email = 89874590+SpanishHans@users.noreply.github.com
+	signingkey = /home/usurper/.ssh/id_ed25519
+[core]
+	editor = nvim
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /home/usurper/.config/git/allowed_signers
+[push]
+	autoSetupRemote = always
