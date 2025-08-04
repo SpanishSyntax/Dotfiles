@@ -10,5 +10,5 @@
 	format = ssh
 [gpg "ssh"]
 	allowedSignersFile = /home/usurper/.config/git/allowed_signers
-[push]
-	autoSetupRemote = always
+[branch]
+    autoSetupRemote = always
