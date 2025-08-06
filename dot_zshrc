@@ -103,11 +103,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#auto_venv
+# Auto venv activation
 autoload -U add-zsh-hook
 load_venv_on_cd() {
   source ~/.scripts/activate_venv.sh
 }
+
 add-zsh-hook chpwd load_venv_on_cd
 load_venv_on_cd  # run once at shell start, too
 
