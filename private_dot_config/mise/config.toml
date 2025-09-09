@@ -1,0 +1,12 @@
+[tools]
+bun = "latest"
+neovim = "latest"
+node = "latest"
+python = "3.12.3"
+uv = "latest"
+
+[env]
+
+[settings]
+python.uv_venv_auto = true
+experimental = true
